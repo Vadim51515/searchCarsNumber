@@ -2,14 +2,15 @@ import type React from 'react';
 import {
     SafeAreaView,
     StatusBar,
-    StyleSheet,
     useColorScheme,
     View,
 } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Provider } from 'react-redux';
 
 import { Main } from './src/pages/Main';
 import { useAppStyles } from './src/styles';
+import { store } from './src/redux';
 
 function App(): React.JSX.Element {
     const isDarkMode = useColorScheme() === 'dark';
@@ -23,58 +24,19 @@ function App(): React.JSX.Element {
 
     return (
         <SafeAreaView style={backgroundStyle}>
-            <StatusBar
-                backgroundColor={backgroundStyle.backgroundColor}
-                barStyle={isDarkMode
-                    ? 'light-content'
-                    : 'dark-content'}
-            />
-            <View style={styles.app} >
-                <Main />
-            </View>
-            {/* <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView> */}
+            <Provider store={store}>
+                <StatusBar
+                    backgroundColor={backgroundStyle.backgroundColor}
+                    barStyle={isDarkMode
+                        ? 'light-content'
+                        : 'dark-content'}
+                />
+                <View style={styles.app} >
+                    <Main />
+                </View>
+            </Provider>
         </SafeAreaView>
     );
 }
-
-const styles = StyleSheet.create({
-    sectionContainer: {
-        marginTop: 32,
-        paddingHorizontal: 24,
-    },
-    sectionTitle: {
-        fontSize: 24,
-        fontWeight: '600',
-    },
-    sectionDescription: {
-        marginTop: 8,
-        fontSize: 18,
-        fontWeight: '400',
-    },
-    highlight: { fontWeight: '700' },
-});
 
 export default App;
