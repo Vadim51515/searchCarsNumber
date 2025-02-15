@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Iskra-Light.ttf",
+      "sha1": "c32656dcf0955ad4b82493c535db55fe7573bdb9"
+    },
+    {
+      "path": "assets/fonts/Iskra-Regular.ttf",
+      "sha1": "56e487d512b00c5c003dc77f584e8b899d37a7c4"
+    }
+  ]
+}
