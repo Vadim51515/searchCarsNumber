@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import {
     MAX_SEARCH_NUMBER, MIN_SEARCH_NUMBER,
 } from '../../../common/constants';
-import { useMainPageStyles } from '../styles';
+import { useMainScreenStyles } from '../styles';
 import {
     isFoundMaxSearchNumberSelector,
     isFoundMinSearchNumberSelector,
@@ -17,7 +17,7 @@ import {
 } from '../redux/selectors';
 
 export const HeadInformation = () => {
-    const { styles } = useMainPageStyles();
+    const { styles } = useMainScreenStyles();
 
     const minSearchNumber = useSelector(minSearchNumberSelector);
     const maxSearchNumber = useSelector(maxSearchNumberSelector);

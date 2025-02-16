@@ -1,20 +1,22 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Main } from '../pages/Main';
+import { InitScreen } from '../screens/InitScreen';
+import { MainScreen } from '../screens/MainScreen';
 
 const Stack = createStackNavigator();
 
 export const AppView = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName='InitScreen'>
                 <Stack.Screen
-                    component={InitialScreen}
-                    name='InitialScreen'
+                    component={InitScreen}
+                    name='InitScreen'
+                    options={{ header: () => null }}
                 />
                 <Stack.Screen
-                    component={Main}
+                    component={MainScreen}
                     name='MainScreen'
                 />
             </Stack.Navigator>

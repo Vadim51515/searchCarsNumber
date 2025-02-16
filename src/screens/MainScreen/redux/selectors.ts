@@ -1,7 +1,7 @@
 import {
     MAX_SEARCH_NUMBER, MIN_SEARCH_NUMBER,
 } from '../../../common/constants';
-import type { IRootState } from '../../../redux/types';
+import type { IRootState } from '../../../common/redux/types';
 import type { TSearchNumberType } from '../types';
 
 export const minSearchNumberSelector = (state: IRootState) => state.mainPage.minSearchNumber;

@@ -8,9 +8,9 @@ import {
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Provider } from 'react-redux';
 
-import { Main } from './src/pages/Main';
+import { store } from './src/common/redux';
+import { AppView } from './src/stacks';
 import { useAppStyles } from './src/styles';
-import { store } from './src/redux';
 
 function App(): React.JSX.Element {
     const isDarkMode = useColorScheme() === 'dark';
@@ -32,7 +32,7 @@ function App(): React.JSX.Element {
                         : 'dark-content'}
                 />
                 <View style={styles.app} >
-                    <Main />
+                    <AppView />
                 </View>
             </Provider>
         </SafeAreaView>

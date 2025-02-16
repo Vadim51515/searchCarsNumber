@@ -5,14 +5,14 @@ import { useActions } from '../../common/hooks/useActions';
 import { Separator } from '../../common/ui-components/Separator';
 import { CarsNumberForm } from './components/CarsNumberForm';
 import { HeadInformation } from './components/HeadInformation';
-import { useMainPageStyles } from './styles';
+import { useMainScreenStyles } from './styles';
 import { mainPageActions } from './redux/actions';
 import {
     isFoundMaxSearchNumberSelector, isFoundMinSearchNumberSelector,
 } from './redux/selectors';
 
-export const Main = () => {
-    const { styles } = useMainPageStyles();
+export const MainScreen = () => {
+    const { styles } = useMainScreenStyles();
 
     const isFoundMaxSearchNumber = useSelector(isFoundMaxSearchNumberSelector);
     const isFoundMinSearchNumber = useSelector(isFoundMinSearchNumberSelector);

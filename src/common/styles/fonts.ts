@@ -12,4 +12,10 @@ export const fontStyles = StyleSheet.create({
         lineHeight: 24,
         fontFamily: 'Inter-SemiBold',
     },
+
+    defaultText: {
+        fontSize: 16,
+        lineHeight: 20,
+        fontFamily: 'Inter-SemiBold',
+    },
 });

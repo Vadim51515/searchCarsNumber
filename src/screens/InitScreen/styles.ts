@@ -4,26 +4,21 @@ import { StyleSheet } from 'react-native';
 import { useThemeContext } from '../../common/context/ThemeContext';
 import { fontStyles } from '../../common/styles/fonts';
 
-export const useMainPageStyles = () => {
+export const useInitScreenStyles = () => {
     const theme = useThemeContext();
 
     return useMemo(() => ({
         theme,
         styles: StyleSheet.create({
-            wrapper: {
-                flex: 1,
-                justifyContent: 'center',
-            },
-
-            content: {
-                flex: 1,
-                justifyContent: 'flex-end',
-            },
-
-            text: {
+            title: {
                 ...fontStyles.title,
-                marginBottom: 10,
+                marginBottom: 40,
                 color: theme.textColor,
+            },
+
+            inputs: {
+                gap: 20,
+                marginBottom: 40,
             },
 
         }),
