@@ -6,6 +6,8 @@ import {
 import {
     MAX_SEARCH_NUMBER, MIN_SEARCH_NUMBER,
 } from '../../common/constants';
+import { useActions } from '../../common/hooks/useActions';
+import { appActions } from '../../common/redux/actions';
 import type { TNumStr } from '../../common/types';
 import { Button } from '../../common/ui-components/Button';
 import { Input } from '../../common/ui-components/Input';
@@ -17,10 +19,7 @@ export const InitScreen = () => {
     const [minNumber, setMinNumber] = useState<TNumStr>(MIN_SEARCH_NUMBER);
     const [maxNumber, setMaxNumber] = useState<TNumStr>(MAX_SEARCH_NUMBER);
 
-    const onNext = () => {
-        
-    }
-
+    const { initApp } = useActions(appActions);
 
     return (
         <View>
@@ -44,7 +43,7 @@ export const InitScreen = () => {
                 />
             </View>
 
-            <Button onPress={() => {}}>Далее</Button>
+            <Button onPress={() => { initApp(minNumber, maxNumber); }}>Далее</Button>
         </View>
     );
 };

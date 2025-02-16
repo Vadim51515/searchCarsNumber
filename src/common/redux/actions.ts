@@ -3,7 +3,9 @@ import {
     MAX_SEARCH_NUMBER, MIN_SEARCH_NUMBER,
 } from '../constants';
 import { appSliceActions } from './slice';
-import type { ThunkActionCommon } from '../types';
+import type {
+    ThunkActionCommon, TNumStr,
+} from '../types';
 
 const {
     changeMaxSearchNumber,
@@ -12,11 +14,11 @@ const {
 
 const { setIsInit } = appSliceActions;
 
-const initApp = (minNumber: string, maxNumber: string): ThunkActionCommon => (dispatch, getState) => {
-    dispatch(changeMaxSearchNumber(Number(minNumber) || MIN_SEARCH_NUMBER));
+const initApp = (minNumber: TNumStr, maxNumber: TNumStr): ThunkActionCommon => (dispatch, getState) => {
+    dispatch(changeMinSearchNumber(Number(minNumber) || MIN_SEARCH_NUMBER));
     dispatch(changeMaxSearchNumber(Number(maxNumber) || MAX_SEARCH_NUMBER));
 
     dispatch(setIsInit(true));
 };
 
-export const appctions = { initApp };
+export const appActions = { initApp };

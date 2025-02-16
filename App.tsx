@@ -11,9 +11,9 @@ import { Provider } from 'react-redux';
 import { store } from './src/common/redux';
 import { AppView } from './src/stacks';
 import { useAppStyles } from './src/styles';
-
 function App(): React.JSX.Element {
     const isDarkMode = useColorScheme() === 'dark';
+
     const { styles } = useAppStyles();
 
     const backgroundStyle = {
