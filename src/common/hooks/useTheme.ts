@@ -10,6 +10,7 @@ export const useTheme = (): ITheme => {
         primaryColor: '#a45db9',
         textForPrimaryColor: '#fff',
         textColor: '#0c0c0c',
+        borderColor: '#cec7c7',
     };
 
     const darkTheme = {
@@ -17,6 +18,7 @@ export const useTheme = (): ITheme => {
         primaryColor: '#A45DB9',
         textForPrimaryColor: '#fff',
         textColor: '#f3e9e9',
+        borderColor: '#cec7c7',
     };
 
     switch (deviceScheme) {

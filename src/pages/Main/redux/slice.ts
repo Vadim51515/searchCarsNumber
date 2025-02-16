@@ -4,8 +4,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { IMainPageState } from './types';
 
 const initialState: IMainPageState = {
-    minSearchNumber: 1,
-    maxSearchNumber: 999,
+    minSearchNumber: 995,
+    maxSearchNumber: 5,
 };
 
 export const {

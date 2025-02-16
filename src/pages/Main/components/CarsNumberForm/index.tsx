@@ -5,6 +5,7 @@ import {
 
 import { useParamSelector } from '../../../../common/hooks/useParamSelector';
 import { Button } from '../../../../common/ui-components/Button';
+import { formatNumber } from '../../../../common/utils';
 import { searchNumberSelector } from '../../redux/selectors';
 import type { ICarsNumberForm } from '../../types';
 import { useCarsNumberFormStyles } from './styles';
@@ -19,7 +20,7 @@ export const CarsNumberForm: FC<ICarsNumberForm> = ({
 
     return (
         <View>
-            <Text style={styles.title}>{`Следующий номер: ${searchNumber}`}</Text>
+            <Text style={styles.title}>{`Следующий номер: ${formatNumber(searchNumber)}`}</Text>
             <Button onPress={() => { changeSearchNumber(); }}>Номер был найден!</Button>
         </View>
     );

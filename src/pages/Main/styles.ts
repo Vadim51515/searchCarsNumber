@@ -10,9 +10,19 @@ export const useMainPageStyles = () => {
     return useMemo(() => ({
         theme,
         styles: StyleSheet.create({
-            wrapper: { flex: 1 },
-            title: {
+            wrapper: {
+                flex: 1,
+                justifyContent: 'center',
+            },
+
+            content: {
+                flex: 1,
+                justifyContent: 'flex-end',
+            },
+
+            text: {
                 ...fontStyles.title,
+                marginBottom: 10,
                 color: theme.textColor,
             },
 

@@ -1,3 +1,6 @@
+import {
+    MAX_SEARCH_NUMBER, MIN_SEARCH_NUMBER,
+} from '../../../common/constants';
 import type { IRootState } from '../../../redux/types';
 import type { TSearchNumberType } from '../types';
 
@@ -9,3 +12,14 @@ export const searchNumberSelector = (state: IRootState, type: TSearchNumberType)
 
     return maxSearchNumberSelector(state);
 };
+
+export const isSearchNumberCrossedSelector = (state: IRootState) => (
+    state.mainPage.maxSearchNumber < state.mainPage.minSearchNumber
+);
+export const isFoundMaxSearchNumberSelector = (state: IRootState) => (
+    state.mainPage.maxSearchNumber < MIN_SEARCH_NUMBER
+);
+
+export const isFoundMinSearchNumberSelector = (state: IRootState) => (
+    state.mainPage.minSearchNumber > MAX_SEARCH_NUMBER
+);

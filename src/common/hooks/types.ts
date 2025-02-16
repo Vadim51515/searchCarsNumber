@@ -8,6 +8,7 @@ export interface ITheme {
     backgroundColor: string;
     textForPrimaryColor: string;
     textColor: string;
+    borderColor: string;
 }
 
 export type TUseActions<M extends ActionCreatorsMapObject<unknown>> = {

@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 
-import { WINDOW_HEIGHT } from './common/constants';
 import { useThemeContext } from './common/context/ThemeContext';
 
 export const useAppStyles = () => {
@@ -11,7 +10,7 @@ export const useAppStyles = () => {
         theme,
         styles: StyleSheet.create({
             app: {
-                height: WINDOW_HEIGHT,
+                height: '100%',
                 backgroundColor: theme.backgroundColor,
                 padding: 16,
             },
