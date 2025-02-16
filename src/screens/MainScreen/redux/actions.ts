@@ -1,4 +1,5 @@
 import type { ThunkActionCommon } from '../../../common/types';
+import { showNewNumberToast } from '../../../common/utils';
 import {
     maxSearchNumberSelector, minSearchNumberSelector,
 } from './selectors';
@@ -19,6 +20,8 @@ const changeMinSearchNumber = (paramsMinSearchNumber?: number): ThunkActionCommo
         return;
     }
 
+    showNewNumberToast();
+
     newMinSearchNumber = minSearchNumber + 1;
     dispatch(setMinSearchNumber(newMinSearchNumber));
 };
@@ -32,6 +35,8 @@ const changeMaxSearchNumber = (paramsMaxSearchNumber?: number): ThunkActionCommo
 
         return;
     }
+
+    showNewNumberToast();
 
     newMaxSearchNumber = maxSearchNumber - 1;
     dispatch(setMaxSearchNumber(newMaxSearchNumber));

@@ -8,6 +8,7 @@ import {
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { Provider } from 'react-redux';
 
+import { ToastNotificationWrapper } from './src/common/components/ToastNotification/ToastNotificationWrapper';
 import { store } from './src/common/redux';
 import { AppView } from './src/stacks';
 import { useAppStyles } from './src/styles';
@@ -31,10 +32,13 @@ function App(): React.JSX.Element {
                         ? 'light-content'
                         : 'dark-content'}
                 />
+
                 <View style={styles.app} >
                     <AppView />
                 </View>
+
             </Provider>
+            <ToastNotificationWrapper />
         </SafeAreaView>
     );
 }

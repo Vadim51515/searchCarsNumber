@@ -7,6 +7,12 @@ export const fontStyles = StyleSheet.create({
         fontFamily: 'Inter-SemiBold',
     },
 
+    subTitle: {
+        fontSize: 20,
+        lineHeight: 28,
+        fontFamily: 'Inter-SemiBold',
+    },
+
     button: {
         fontSize: 18,
         lineHeight: 24,
